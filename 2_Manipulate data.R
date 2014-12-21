@@ -3,7 +3,9 @@ summary(data)
 str(data)  # check the structure of the objective
 names(data)
 dim(data) #dimension of an objective
-class(object)  # class of an object (numeric, matrix, data frame, etc)
+class(data)  # class of an object (numeric, matrix, data frame, etc)
+length(data)  # the number of the records
+
 
 head(data,n=3) # default n is 6
 tail(data,n=3) # default n is 6
@@ -30,11 +32,18 @@ table(data$v1)
 
 # add new row/column to an exsiting objective
 
+# remove certain parts of an existing objective
+age <- c(25, 34, 28, 52)  p1<-age[-2]   p1   # result: [1] 25 28 52
+data[-1,-2]  #remove the first row and the second column of the matric data
 
 # subset certain parts of an existing objective
 
 
-# merge two objective
+# combine two objective
+
+c<-(data1,data2) # combines objects into a vector.  eg: patientID <- c(1, 2, 3, 4)   age <- c(25, 34, 28, 52)   c<-(patientID,age)
+cbind(object, object, ...)  # combine objects as columns
+rbind(object, object, ...)  # combine objects as rows
 
 
 # identify variables or records matching certain criteria 

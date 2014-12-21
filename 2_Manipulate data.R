@@ -5,12 +5,13 @@ names(data)
 dim(data) #dimension of an objective
 class(object)  # class of an object (numeric, matrix, data frame, etc)
 
-typeof(data$v1)  # type of a variable
-levels(data$v1) # list levels of certain variable
-
-table(data)
 head(data,n=3) # default n is 6
 tail(data,n=3) # default n is 6
+
+typeof(data$v1)  # type of a variable
+levels(data$v1) # list levels of certain variable
+table(data$v1)
+
 
 
 # deal with missing value & NA value

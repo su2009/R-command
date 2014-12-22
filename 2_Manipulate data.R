@@ -5,6 +5,7 @@ names(data)
 dim(data) #dimension of an objective
 class(data)  # class of an object (numeric, matrix, data frame, etc)
 length(data)  # the number of the records
+View(data)
 
 head(data,n=3) # default n is 6
 tail(data,n=3) # default n is 6

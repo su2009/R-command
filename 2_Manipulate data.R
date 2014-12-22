@@ -61,7 +61,7 @@ x[which(x$var1>3&x$var3<14),] # same as above
 x[,c(2:4)] # keep certain variables/columns 2,3,4
 x[,c("var1","var3","var4"),]  # keep certain variables (var1,3,and 4)
 
-newdata<-data(x,var1>1|var3<3, select=c(var1,var2,var4))
+newdata<-subset(data,var1>1|var3<3, select=c(var1,var2,var4)) # subset certain part of the dataset, and keep certain variables (1,2,and4)
 
 
 # combine two objective

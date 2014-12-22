@@ -29,6 +29,9 @@ sort(data$var1)   # only return the sorted result of var1; increasing is the def
 data[order(data$var1,data$var2),]   # return the whole matric
 data[order(data$var1,-data$var2),]   # return the whole matric, sort var1 by increasing and then var2 by decreasing
 
+library(plyr)  # sorting package
+arrange(data,desc(var2))
+
 # add new row/column to an exsiting objective
 
 data$newcolumn<-c(1,2,3,4)   # add new column/variable
@@ -69,7 +72,7 @@ newdata<-subset(data,var1>1|var3<3, select=c(var1,var2,var4)) # subset certain p
 c<-(data1,data2) # combines objects into a vector.  eg: patientID <- c(1, 2, 3, 4)   age <- c(25, 34, 28, 52)   c<-(patientID,age)
 cbind(object, object, ...)  # combine objects as columns
 rbind(object, object, ...)  # combine objects as rows
-
+merge(object1, object2, by.x="var1", by.y="var2")
 
 # identify variables or records matching certain criteria 
-
+which(leadership$gender=="F"&leadership$country=="UK")  # return the index of the record matching the cretiria

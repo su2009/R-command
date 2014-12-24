@@ -58,3 +58,17 @@ z <- array(1:24, c(2, 3, 4), dimnames=list(dim1, dim2, dim3))
 write.table(patientdata, file = "pdata.csv", sep = ",", col.names = NA)  #  col.names = NA is needed to make sure the cell[1,1] is empty
 
 
+# difference between matrix and data.fram when using $
+  data<-matrix(rnorm(6),nrow=3,ncol=2,dimnames = list(c("r1","r2","r3"),c("v1", "v2"))
+  data
+  names(data)   # the result is "NULL"
+  plot(data$v1,data$v2) # the result is "Error in data$v1 : $ operator is invalid for atomic vectors"
+  plot(data[,"v1"],data[,"v2"])   # can plot the needed scatterplot
+  plot(data[,'v1'],data[,'v2'])   # same result as above
+  
+  data2 <- data.frame(v1 = c(100,150,200,240,300), v2 = c(60,65,70,75,80))
+  names(data2)  # the result is "[1] "v1" "v2""
+  plot(data2$v1,data2$v2)  # can plot the needed scatterplot
+  
+  # more details: http://stackoverflow.com/questions/23299684/r-error-in-xed-operator-is-invalid-for-atomic-vectors
+  

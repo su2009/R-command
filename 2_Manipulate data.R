@@ -23,6 +23,21 @@ table(data$v1)
 2. na.rm=TRUE # is always used as parameter in function
 3. # create new dataset without missing data 
   newdata <- na.omit(data)
+4. # similar to the above
+  a<-airquality[1:6,]
+  good<-complete.cases(a)
+  a[good,]
+5. #remove na values
+   x<-c(1,2,NA,3)
+   bad<-is.na(x)
+   x[!bad]
+6. #take subset of no missing values
+   x<-c(1,2,NA,4,NA)
+   y<-c("y","y",NA,"y",NA)
+   good<-complete.cases(x,y)  # the length of the two vectors nees to be the same
+   x[good]
+   y[good]
+
   
 # sorting dataset
 
